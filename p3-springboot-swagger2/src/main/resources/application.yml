@@ -1,0 +1,13 @@
+server:
+  port: 10900
+
+spring:
+  profiles:
+    active: dev
+
+my:
+  name: yanger
+  girl:
+    name: xiaohong
+    age: 22
+
