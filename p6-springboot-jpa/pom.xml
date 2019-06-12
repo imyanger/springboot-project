@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yanger</groupId>
-    <artifactId>p5-springboot-jdbcTemplate</artifactId>
+    <artifactId>p6-springboot-jpa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>p5-springboot-jdbcTemplate</name>
+    <name>p6-springboot-jpa</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -76,6 +76,13 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.0.29</version>
+        </dependency>
+
+        <!--jap依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa
+            </artifactId>
         </dependency>
 
         <dependency>
