@@ -1,4 +1,4 @@
-package com.yanger.jpa;
+package com.yanger.redis;
 
 import com.yanger.jdbcTemplate.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("jpa/user")
-public class JpaUserApi {
+@RequestMapping("redis/user")
+public class RedisUserApi {
 
     @Autowired
-    private JpaUserService userService;
+    private RedisUserService userService;
 
     /**
      * 添加用户

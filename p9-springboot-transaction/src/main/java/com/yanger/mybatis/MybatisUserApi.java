@@ -1,4 +1,4 @@
-package com.yanger.jpa;
+package com.yanger.mybatis;
 
 import com.yanger.jdbcTemplate.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("jpa/user")
-public class JpaUserApi {
+@RequestMapping("mybatis/user")
+public class MybatisUserApi {
 
     @Autowired
-    private JpaUserService userService;
+    private MybatisUserService userService;
 
     /**
      * 添加用户

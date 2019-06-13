@@ -1,17 +1,16 @@
-package com.yanger.jpa;
+package com.yanger.jdbcTemplate;
 
-import com.yanger.jdbcTemplate.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("jpa/user")
-public class JpaUserApi {
+@RequestMapping("jdbc/user")
+public class UserApi {
 
     @Autowired
-    private JpaUserService userService;
+    private JUserService userService;
 
     /**
      * 添加用户
@@ -53,15 +52,14 @@ public class JpaUserApi {
         return userService.getUser(id);
     }
 
+    /**
+     * 获取所有用户信息
+     * @return
+     */
     @GetMapping("getUsers")
     public List<User> getUsers(){
         List<User> users = userService.findAll();
         return users;
-    }
-
-    @GetMapping("getUserByUP")
-    public User getUserByUP(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password){
-        return userService.getUser(username, password);
     }
 
 }
