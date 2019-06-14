@@ -2,11 +2,11 @@ package com.yanger.redis;
 
 import com.yanger.jdbcTemplate.User;
 import org.apache.ibatis.annotations.*;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository // IUserDao注入名重复
+@Mapper
+//@Repository // @Repository无法注入接口，可以启动类加@ComponentScan或者@MapperScan
 public interface RedisDao {
 
     /**
@@ -15,6 +15,9 @@ public interface RedisDao {
      * @return
      */
     @Insert("insert into user(username, password) values(#{username}, #{password})")
+    // 自增长主键之后获取主键需要设置属性@Options(useGeneratedKeys = true, keyProperty = "id")
+    // 如果是基于xml则insert标签中添加属性keyProperty="id" useGeneratedKeys="true"
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int add(User user);
 
     /**

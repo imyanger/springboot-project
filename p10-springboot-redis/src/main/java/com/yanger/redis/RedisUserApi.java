@@ -19,8 +19,8 @@ public class RedisUserApi {
      */
     @PostMapping("addUser")
     public String addUser(User user){
-        userService.addUser(user);
-        return "添加用户成功";
+        int id = userService.addUser(user);
+        return "添加用户成功，主键id：" + id;
     }
 
     /**
@@ -51,6 +51,16 @@ public class RedisUserApi {
     @GetMapping("getUser")
     public User getUser(@RequestParam(value = "id") int id){
         return userService.getUser(id);
+    }
+
+    /**
+     * 获取用户信息，注解缓存
+     * @param id
+     * @return
+     */
+    @GetMapping("getUserAnno")
+    public User getUserAnno(@RequestParam(value = "id") int id){
+        return userService.getUserAnno(id);
     }
 
     @GetMapping("getUsers")
