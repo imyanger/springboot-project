@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yanger.mybatis.MybatisDao">
+<mapper namespace="com.yanger.mybatis.dao.IUserDao">
 
     <!-- 通用查询结果对象-->
-    <resultMap id="BaseResultMap" type="com.yanger.jdbcTemplate.User">
+    <resultMap id="BaseResultMap" type="com.yanger.mybatis.po.User">
         <id column="id" property="id"/>
         <result column="username" property="username"/>
         <result column="password" property="password"/>
@@ -14,7 +14,7 @@
     </sql>
 
     <!--添加用户-->
-    <insert id="add" parameterType="com.yanger.jdbcTemplate.User">
+    <insert id="add" parameterType="com.yanger.mybatis.po.User">
         insert into user(username, password) values(#{username}, #{password})
     </insert>
 
@@ -24,7 +24,7 @@
     </delete>
 
     <!--更新用户信息-->
-    <update id="update" parameterType="com.yanger.jdbcTemplate.User">
+    <update id="update" parameterType="com.yanger.mybatis.po.User">
         update user set username = #{username}, password = #{password} where id = #{id}
     </update>
 

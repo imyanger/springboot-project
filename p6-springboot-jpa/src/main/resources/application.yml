@@ -11,6 +11,7 @@ spring:
     password: 1234
   jpa:
     show-sql: true
+    # 配置jpa数据库类型
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   profiles:
     active: dev

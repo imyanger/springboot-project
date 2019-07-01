@@ -58,12 +58,6 @@
             <version>1.4.11.1</version>
         </dependency>
 
-        <!--jdbc依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-
         <!--mysql连接-->
         <dependency>
             <groupId>mysql</groupId>
@@ -77,6 +71,12 @@
             <artifactId>druid</artifactId>
             <version>1.0.29</version>
         </dependency>
+
+        <!--jdbc依赖-->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>-->
 
         <!--jpa依赖-->
         <dependency>

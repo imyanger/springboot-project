@@ -1,0 +1,2 @@
+说明：
+    redis包下关于User操作的与原有mybatis包下一致，删除了mybatis包下的，毕竟注入bean重复。
