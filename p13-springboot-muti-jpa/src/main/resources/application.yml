@@ -1,0 +1,30 @@
+server:
+  port: 10900
+
+spring:
+  datasource:
+    master:
+      # 新版驱动从com.mysql.jdbc.Driver变更为com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # 数据源需要添加时间标准和指定编码格式解决乱码 You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+      url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: 1234
+    slave:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/springboot2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+        username: root
+        password: 1234
+  jpa:
+    show-sql: true
+    # 配置jpa数据库类型
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  profiles:
+    active: dev
+
+my:
+  name: yanger
+  girl:
+    name: xiaohong
+    age: 22
+
