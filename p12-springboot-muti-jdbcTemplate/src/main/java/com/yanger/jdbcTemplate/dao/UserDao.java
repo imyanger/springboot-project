@@ -23,7 +23,7 @@ public class UserDao implements IUserDao {
     @Resource(name="slaveJdbcTemplate")
     private JdbcTemplate slaveJdbcTemplate;
 
-    /**
+   /**
      * 添加用户
      * @param user
      * @return
@@ -31,6 +31,17 @@ public class UserDao implements IUserDao {
     @Override
     public int add(User user) {
         return jdbcTemplate.update("insert into user(username, password) value(?, ?)",
+                user.getUsername(), user.getPassword());
+    }
+
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
+    @Override
+    public int addSlave(User user) {
+        return slaveJdbcTemplate.update("insert into user(username, password) value(?, ?)",
                 user.getUsername(), user.getPassword());
     }
 

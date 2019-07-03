@@ -5,6 +5,7 @@ import com.yanger.jpa.po.User;
 import com.yanger.jpa.sdao.ISlaveUserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,8 +23,24 @@ public class UserService {
      * 添加用户
      * @param user
      */
+    // 需要指明value属性，否则会使用默认的事务管理，即@Primary声明的那一个
+    @Transactional(value = "masterTransactionManager")
     public void addUser(User user){
         userDao.save(user);
+        // 除零异常，测试事务
+        int a =1/0;
+    }
+
+    /**
+     * 添加用户
+     * @param user
+     */
+    // 需要指明value属性，否则会使用默认的事务管理，即@Primary声明的那一个
+    @Transactional(value = "slaveTransactionManager")
+    public void addUserSlave(User user){
+        iSlaveUserDao.save(user);
+        // 除零异常，测试事务
+        int a =1/0;
     }
 
     /**

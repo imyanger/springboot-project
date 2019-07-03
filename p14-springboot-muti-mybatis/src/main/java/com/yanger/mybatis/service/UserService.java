@@ -5,6 +5,7 @@ import com.yanger.mybatis.po.User;
 import com.yanger.mybatis.sdao.ISlaveUserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,8 +22,22 @@ public class UserService {
      * 添加用户
      * @param user
      */
+    @Transactional(value = "masterTransactionManager")
     public void addUser(User user){
         userDao.add(user);
+        // 除零异常，测试事务
+        int a = 1/0;
+    }
+
+    /**
+     * 添加用户
+     * @param user
+     */
+    @Transactional(value = "slaveTransactionManager")
+    public void addUserSlave(User user){
+        iSlaveUserDao.add(user);
+        // 除零异常，测试事务
+        int a = 1/0;
     }
 
     /**

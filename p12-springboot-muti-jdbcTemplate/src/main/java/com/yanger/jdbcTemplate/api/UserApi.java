@@ -25,6 +25,16 @@ public class UserApi {
     }
 
     /**
+     * 添加用户
+     * @param user
+     */
+    @PostMapping("addUserSlave")
+    public String addUserSlave(User user){
+        userService.addUserSlave(user);
+        return "添加用户成功";
+    }
+
+    /**
      * 删除用户
      * @param id
      */

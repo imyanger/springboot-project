@@ -5,6 +5,7 @@ import com.yanger.mybatis.po.User;
 import com.yanger.mybatis.util.DS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,8 +19,26 @@ public class UserService {
      * 添加用户
      * @param user
      */
+    // 动态数据源直接使用@Transactional即可
+    @Transactional
+    @DS(value = "master")
     public void addUser(User user){
         userDao.add(user);
+        // 除零异常，测试事务
+        int a = 1/0;
+    }
+
+
+    /**
+     * slave添加用户
+     * @param user
+     */
+    @Transactional
+    @DS(value = "slave")
+    public void addUserSlave(User user){
+        userDao.add(user);
+        // 除零异常，测试事务
+        int a = 1/0;
     }
 
     /**

@@ -14,6 +14,13 @@ public interface IUserDao {
     int add(User user);
 
     /**
+     * 添加用户
+     * @param user
+     * @return
+     */
+    int addSlave(User user);
+
+    /**
      * 根据id删除用户
      * @param id
      * @return
