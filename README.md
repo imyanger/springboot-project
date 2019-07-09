@@ -1,14 +1,14 @@
 # springboot-project
-SpringBoot学习系列
+此系列为Spring Boot学习系列博文配套源码，主要讲解了Spring Boot与其他组件的集成与使用，博文专栏地址：[Spring Boot学习系列](https://blog.csdn.net/Simple_Yangger/column/info/40584)
 
 ### 快速开始
-* Spring Boot快速开始
-* 配置文件和注解
+* [快速开始Spring Boot](https://blog.csdn.net/Simple_Yangger/article/details/91357757)
+* [Spring Boot配置文件与常用注解](https://blog.csdn.net/Simple_Yangger/article/details/91409786)
 
-### Spring Boot方便开发
-* swagger2文档支持
-* 热部署工具
-* lombok
+### Spring Boot便捷开发
+* [文档支持，Spring Boot集成Swagger2](https://blog.csdn.net/Simple_Yangger/article/details/93544230)
+* [热部署工具，Spring Boot集成devtools](https://blog.csdn.net/Simple_Yangger/article/details/95106785)
+* [简化代码，Spring Boot使用lombok](https://blog.csdn.net/Simple_Yangger/article/details/95244402)
 
 ### 数据存储
 * jdbcTemplelate

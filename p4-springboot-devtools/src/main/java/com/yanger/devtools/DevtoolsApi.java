@@ -3,14 +3,16 @@ package com.yanger.devtools;
 import com.thoughtworks.xstream.XStream;
 import com.yanger.swagger2.Book;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("devtools")
+@RestController
+@RequestMapping("devtools")
 public class DevtoolsApi {
 
     @GetMapping("msg")
     public String getMsg(){
-        return "Hello devtools new";
+        return "Hello devtools, I love You";
     }
 
     @GetMapping("cast")
