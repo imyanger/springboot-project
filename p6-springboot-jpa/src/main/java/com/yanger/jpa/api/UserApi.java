@@ -54,12 +54,14 @@ public class UserApi {
         return userService.getUser(id);
     }
 
+    // 查询全部
     @GetMapping("getUsers")
     public List<User> getUsers(){
         List<User> users = userService.findAll();
         return users;
     }
 
+    // 根据用户名和密码查找用户
     @GetMapping("getUserByUP")
     public User getUserByUP(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password){
         return userService.getUser(username, password);
