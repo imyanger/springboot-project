@@ -8,6 +8,7 @@ import javax.persistence.*;
 public class User {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 使用数据库的主键自增策略
     private Integer id;
 
