@@ -25,9 +25,8 @@ public class UserService {
     public void addUser(User user){
         userDao.add(user);
         // 除零异常，测试事务
-        int a = 1/0;
+        //int a = 1/0;
     }
-
 
     /**
      * slave添加用户
@@ -38,7 +37,7 @@ public class UserService {
     public void addUserSlave(User user){
         userDao.add(user);
         // 除零异常，测试事务
-        int a = 1/0;
+        //int a = 1/0;
     }
 
     /**
