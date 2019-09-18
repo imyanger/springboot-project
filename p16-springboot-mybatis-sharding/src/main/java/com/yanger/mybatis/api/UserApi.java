@@ -18,16 +18,6 @@ public class UserApi {
      * 添加用户
      * @param user
      */
-    @PostMapping("addUser")
-    public String addUser(User user){
-        userService.addUser(user);
-        return "添加用户成功";
-    }
-
-    /**
-     * 添加用户
-     * @param user
-     */
     @PostMapping("addUserMaster")
     public String addUserMaster(User user){
         userService.addUserMaster(user);
