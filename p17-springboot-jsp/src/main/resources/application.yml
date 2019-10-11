@@ -1,0 +1,10 @@
+server:
+  port: 10900
+
+spring:
+  profiles:
+    active: dev
+  mvc:
+    view:
+      prefix: /WEB-INF/template/ #view视图文件（jsp）文件的存储位置
+      suffix: .jsp #视图文件后缀

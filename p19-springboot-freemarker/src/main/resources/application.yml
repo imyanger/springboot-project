@@ -1,0 +1,21 @@
+server:
+  port: 10900
+
+spring:
+  profiles:
+    active: dev
+  freemarker:
+    enabled: true #是否启用freemarker
+    template-loader-path: classpath:/templates/ #设定模板的加载路径，多个以逗号分隔
+    suffix: .ftl #设定模板的后缀
+    content-type: text/html
+    check-template-location: true #是否检查模板位置是否存在
+    cache: false #是否启用模板缓存
+    charset: UTF-8 #模板编码
+    #一些常用配置
+    allow-request-override: false #是否允许HttpServletRequest属性覆盖(隐藏)控制器生成的同名模型属性
+    allow-session-override: false #是否允许HttpSession属性覆盖(隐藏)控制器生成的同名模型属性
+    expose-request-attributes: false #设定所有request的属性在merge到模板的时候，是否要都添加到model中
+    expose-session-attributes: false #是否在merge模板的时候，将HttpSession属性都添加到model中
+    expose-spring-macro-helpers: true #设定是否以springMacroRequestContext的形式暴露RequestContext给Spring’s macro library使用
+    prefer-file-system-access: true #是否优先从文件系统加载template，以支持热加载，默认为true
