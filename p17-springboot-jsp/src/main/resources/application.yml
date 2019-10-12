@@ -6,5 +6,6 @@ spring:
     active: dev
   mvc:
     view:
-      prefix: /WEB-INF/template/ #view视图文件（jsp）文件的存储位置
+      prefix: /templates/ #view视图文件（jsp）文件的存储位置，不能直接放在resources目录下，需要放在webapp目录下
+      #prefix: /pages/ #或者resources下创建META-INF/resources目录
       suffix: .jsp #视图文件后缀
