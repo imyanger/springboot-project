@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yanger</groupId>
-    <artifactId>p19-springboot-freemarker</artifactId>
+    <artifactId>项目名</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>p19-springboot-freemarker</name>
+    <name>项目名</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -43,6 +43,13 @@
             <version>2.7.0</version>
         </dependency>
         <!-- swagger2API文档支持 -->
+        
+        <!-- lombok插件 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <!--devtools热部署-->
         <dependency>

@@ -1,0 +1,13 @@
+server:
+  port: 10900
+
+spring:
+  profiles:
+    active: dev
+  redis:
+    host: localhost #redis服务器地址
+    port: 6379 #redis端口
+    password: 1234 #redis密码
+    timeout: 60000 #连接超时时间
+    database: 0 #数据库索引，默认为0
+
