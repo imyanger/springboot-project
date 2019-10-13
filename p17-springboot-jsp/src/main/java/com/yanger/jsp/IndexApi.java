@@ -1,4 +1,4 @@
-package com.yanger.thymeleaf;
+package com.yanger.jsp;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("index")
-public class Index {
+public class IndexApi {
 
     @RequestMapping("/hello")
     public String hello(){

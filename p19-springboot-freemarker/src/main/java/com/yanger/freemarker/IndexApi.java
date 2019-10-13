@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("index")
-public class Index {
+public class IndexApi {
 
     @RequestMapping("/hello")
     public String hello(){

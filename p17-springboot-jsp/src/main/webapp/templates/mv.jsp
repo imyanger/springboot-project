@@ -1,2 +1,2 @@
-<h3>hello jsp</h3>
+<h3>mv jsp</h3>
 <span>I'm ${name} from mv method</span>
