@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+
+    <!-- Global Parameter -->
+    <Properties>
+        <Property name="pattern">%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n</Property>
+        <Property name="Log_Path">E:/data/logs</Property>
+    </Properties>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="console"></AppenderRef>
+            <AppenderRef ref="all_file"></AppenderRef>
+            <AppenderRef ref="error_file"></AppenderRef>
+        </Root>
+        <Logger name="com.yanger" level="DEBUG">
+            <AppenderRef ref="system_file"></AppenderRef>
+        </Logger>
+    </Loggers>
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT" follow="true">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>${pattern}</Pattern>
+            </PatternLayout>
+        </Console>
+
+        <RollingFile name="all_file" fileName="${Log_Path}/all.log"
+                     filePattern="${Log_Path}/all_%d{MM-dd}_%i.log" append="true">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>${pattern}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="5MB"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="error_file" fileName="${Log_Path}/error.log"
+                     filePattern="${Log_Path}/error_%d{MM-dd}_%i.log" append="true">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>${pattern}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="5MB"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="system_file" fileName="${Log_Path}/system.log"
+                     filePattern="${Log_Path}/system_%d{MM-dd}_%i.log" append="true">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>${pattern}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="5MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+</configuration>

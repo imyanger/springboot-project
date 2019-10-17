@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yanger</groupId>
-    <artifactId>项目名</artifactId>
+    <artifactId>p28-springboot-actuator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>项目名</name>
+    <name>p28-springboot-actuator</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

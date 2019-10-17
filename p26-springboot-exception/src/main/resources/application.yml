@@ -1,0 +1,10 @@
+server:
+  port: 10900
+
+spring:
+  profiles:
+    active: dev
+  mvc:
+    view:
+      prefix: /templates/ #view视图文件（jsp）文件的存储位置，不能直接放在resources目录下，需要放在webapp目录下
+      suffix: .jsp #视图文件后缀

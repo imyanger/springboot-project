@@ -1,0 +1,10 @@
+server:
+  port: 10900
+
+spring:
+  profiles:
+    active: dev
+
+#og4j 2.x版本不再支持像1.x中的.properties后缀的文件配置方式，2.x版本配置文件后缀名只能为".xml",".json"或者".jsn".
+logging:
+  config: classpath:log4j2.xml
