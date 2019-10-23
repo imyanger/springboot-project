@@ -1,6 +1,7 @@
 package com.yanger.cache;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,12 @@ public class CacheService {
         dataMap.put(id, u);
         return u;
      }
+
+    //删除数据
+    @CacheEvict(value = "cache", key = "'user:' + #id")
+    public void del(int id){
+        log.info("删除id{}数据", id);
+        dataMap.remove(id);
+    }
 
 }

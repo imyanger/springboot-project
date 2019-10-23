@@ -26,4 +26,9 @@ public class CacheApi {
         return cacheService.set(id, u);
     }
 
+    @DeleteMapping("del")
+    public void  del(@RequestParam int id){
+        cacheService.del(id);
+    }
+
 }
