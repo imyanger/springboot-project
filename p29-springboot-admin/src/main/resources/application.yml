@@ -4,3 +4,20 @@ server:
 spring:
   profiles:
     active: dev
+  boot:
+    admin:
+      client:
+        url: http://localhost:10900/
+        auto-registration: true
+        instance:
+          name: spring boot admin
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

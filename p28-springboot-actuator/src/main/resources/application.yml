@@ -4,3 +4,12 @@ server:
 spring:
   profiles:
     active: dev
+
+management:
+  endpoint:
+    health:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -5,6 +5,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
+ * WebMvcConfigurerAdapter在Spring5.0或者SpringBoot2.0已经被废弃，直接实现WebMvcConfigurer即可
  * @author yanger
  * @description
  * @date 2019/11/5
