@@ -1,0 +1,16 @@
+server:
+   port: 19031
+
+#mq配置
+spring:
+   rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+      listener: 
+         concurrency: 10 #并发消费者的初始化值
+         max-concurrency: 20 #并发消费者的最大值
+         prefetch: 5 #每个消费者每次监听时可拉取处理的消息数量
+      
+      
